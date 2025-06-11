@@ -118,6 +118,7 @@
 
   // 10. Lightning flashes at random intervals
   (function lightning() {
+    if (!document.body.contains(container)) return;
     flash.style.opacity = 0.9;
     setTimeout(() => { flash.style.opacity = 0; }, 50);
     setTimeout(lightning, Math.random() * 15000 + 5000);
@@ -125,6 +126,7 @@
 
   // 11. Main animation loop
   function animate() {
+    if (!document.body.contains(container)) return;
     drawClouds();
     drawRain();
     requestAnimationFrame(animate);
