@@ -1,0 +1,90 @@
+
+
+/* popup.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: transparent; }
+
+/* Slim glassmorphic container */
+.popup-container {
+  width: 280px;
+  backdrop-filter: blur(16px) saturate(200%);
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+  overflow: hidden;
+  color: #fafafa;
+}
+
+/* Vibrant gradient header */
+.popup-header {
+  background: linear-gradient(135deg, #6b73ff, #000dff);
+  padding: 18px;
+  text-align: center;
+}
+.popup-header h1 {
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+/* Vertical list layout */
+.popup-main {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+}
+.season-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+/* Icon + label buttons */
+.season-list button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.season-list button .icon {
+  font-size: 1.6rem;
+}
+.season-list button .label {
+  flex: 1;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Smooth hover transitions */
+.season-list button:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateX(4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Styled clear button at bottom */
+.clear-btn {
+  align-self: center;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.clear-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,75,43,0.6);
+}
