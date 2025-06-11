@@ -24,7 +24,13 @@
       transform: `rotate(${Math.random()*360}deg)`
     });
     container.appendChild(petal);
-    petals.push({ el: petal, x: startX, y: -20, speed: Math.random()*1+0.3, drift: (Math.random()-0.5) });
+    petals.push({
+      el: petal,
+      x: startX,
+      y: -20,
+      speed: Math.random() * 1 + 0.3,
+      drift: (Math.random() - 0.5)
+    });
   }
 
   function animate() {

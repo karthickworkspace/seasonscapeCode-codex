@@ -24,7 +24,13 @@
       transform: `rotate(${Math.random()*360}deg)`
     });
     container.appendChild(leaf);
-    leaves.push({ el: leaf, x: startX, y: -20, speed: Math.random()*1+0.5, drift: Math.random()*0.5 });
+    leaves.push({
+      el: leaf,
+      x: startX,
+      y: -20,
+      speed: Math.random() * 1 + 0.5,
+      drift: (Math.random() - 0.5)
+    });
   }
 
   function animate() {
@@ -33,6 +39,7 @@
       l.x += l.drift;
       if (l.y > window.innerHeight) l.y = -20;
       if (l.x > window.innerWidth) l.x = -10;
+      if (l.x < -10) l.x = window.innerWidth;
       l.el.style.top = `${l.y}px`;
       l.el.style.left = `${l.x}px`;
     });
