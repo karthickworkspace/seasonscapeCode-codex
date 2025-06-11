@@ -14,14 +14,23 @@
   for (let i = 0; i < 60; i++) {
     const petal = document.createElement('div');
     petal.textContent = '🌸';
+    const startX = Math.random() * window.innerWidth;
     Object.assign(petal.style, {
-      position: 'absolute', fontSize: `${Math.random()*20+12}px`,
-      left: `${Math.random()*100}%`, top: `${-10}%`,
+      position: 'absolute',
+      fontSize: `${Math.random()*20+12}px`,
+      left: `${startX}px`,
+      top: '-20px',
       opacity: Math.random()*0.6+0.4,
       transform: `rotate(${Math.random()*360}deg)`
     });
     container.appendChild(petal);
-    petals.push({ el: petal, x: parseFloat(petal.style.left), y: -10, speed: Math.random()*1+0.3, drift: (Math.random()-0.5)*1 });
+    petals.push({
+      el: petal,
+      x: startX,
+      y: -20,
+      speed: Math.random() * 1 + 0.3,
+      drift: (Math.random() - 0.5)
+    });
   }
 
   function animate() {
