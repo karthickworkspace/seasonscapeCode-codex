@@ -42,6 +42,7 @@
 
   // Draw loop
   function draw() {
+    if (!document.body.contains(container)) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.strokeStyle = 'rgba(174,194,224,0.5)';
     ctx.lineWidth = 1;
